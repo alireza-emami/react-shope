@@ -53,7 +53,6 @@ const HomePage: FC<Props> = ({ addToCart }) => {
                       </Col>
                       <Col
                         xs={12}
-                        className="d-flex justify-content-center m-2 "
                       >
                         <DetailsPopup product={product} addToCart={addToCart} />
                       </Col>

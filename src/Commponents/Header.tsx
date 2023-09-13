@@ -22,22 +22,10 @@ const Header: FC<Props> = ({ cartItems }) => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/">Home</Nav.Link>
-            {/* <Nav.Link href="/api">Shope</Nav.Link> */}
-            {/* <NavDropdown title="API" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">API1</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">API2</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown> */}
+            <Nav.Link href="./">Home</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <div style={{ justifyContent: "center", alignItems: "center" }}>
-              {/* <Button variant="outline-success">
-                <Badge bg="success"> </Badge> <TfiShoppingCart size={30} />
-              </Button> */}
               <CartPopup cartItems={cartItems} />
             </div>
           </Form>

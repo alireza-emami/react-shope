@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import * as _ from "lodash";
 import HomePage from "./Commponents/HomePage";
 import Header from "./Commponents/Header";
 
@@ -26,8 +27,17 @@ const App = () => {
     JSON.parse(localStorage.getItem("cartItems") || "[]")
   );
 
-  function addToCart(item: CartItem) {
-    const newCartItems = [...cartItems, item];
+  function addToCart(newItem: CartItem) {
+    const newCartItems = [...cartItems];
+
+    const existingItem = _.find(cartItems, function (item) {
+      return item.product.id == newItem.product.id;
+    });
+    if (existingItem) {
+      existingItem.quantity += newItem.quantity;
+    } else {
+      newCartItems.push(newItem);
+    }
     setCartItems(newCartItems);
     localStorage.setItem("cartItems", JSON.stringify(newCartItems));
   }
